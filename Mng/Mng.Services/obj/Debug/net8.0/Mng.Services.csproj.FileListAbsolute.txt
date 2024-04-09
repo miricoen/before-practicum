@@ -1,0 +1,31 @@
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.deps.json
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.dll
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.pdb
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\bin\Debug\net8.0\Mng.Core.dll
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\bin\Debug\net8.0\Mng.Core.pdb
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.AssemblyReference.cache
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.AssemblyInfoInputs.cache
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.AssemblyInfo.cs
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.CoreCompileInputs.cache
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.CopyComplete
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.dll
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\refint\Mng.Services.dll
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.pdb
+C:\Users\miri\Downloads\jm_mtQBoJHu_UiYBlh\Mng\Mng.Services\obj\Debug\net8.0\ref\Mng.Services.dll
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.deps.json
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.dll
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.pdb
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\bin\Debug\net8.0\Mng.Core.dll
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\bin\Debug\net8.0\Mng.Core.pdb
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.AssemblyReference.cache
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.AssemblyInfoInputs.cache
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.AssemblyInfo.cs
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.CoreCompileInputs.cache
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.CopyComplete
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.dll
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\refint\Mng.Services.dll
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.pdb
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\ref\Mng.Services.dll
+D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.sourcelink.json

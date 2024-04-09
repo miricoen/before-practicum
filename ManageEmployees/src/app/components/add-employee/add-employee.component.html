@@ -1,0 +1,144 @@
+<!-- <form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="firstName" />
+  <input type="text" formControlName="lastName" />
+  <label>
+    <input type="radio" formControlName="isMale" value="true" /> זכר
+  </label>
+  <label>
+    <input type="radio" formControlName="isMale" value="false" /> נקבה
+  </label>
+  <input type="date" formControlName="startDate" />
+  <input type="date" formControlName="bornDate" />
+  <div formGroupName="roles">
+    <label>בחר את סוג העבודה הרצוי</label>
+    <select id="typeOfRole" formControlName="typeOfRoleId">
+      <option *ngFor="let role of typeOfRoles" [value]="role.id">
+        {{ role.name }}
+      </option>
+    </select>
+
+    <div>
+      <label>
+        <input type="radio" formControlName="isManegement" value="true" />ניהולי
+      </label>
+      <label>
+        <input type="radio" formControlName="isManegement" value="false" /> לא
+        ניהולי
+      </label>
+    </div>
+
+    <label>תאריך כניסה לעבודה</label>
+    <input
+      type="date"
+      formControlName="DateOfEntryIntoWork"
+      placeholder="Date of Entry Into Work"
+    />
+  </div>
+</form> -->
+
+<form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">שם פרטי:</label>
+    <input type="text" id="firstName" formControlName="firstName" />
+  </div>
+  <div>
+    <label for="lastName">שם משפחה:</label>
+    <input type="text" id="lastName" formControlName="lastName" />
+  </div>
+  <div>
+    <label>מגדר:</label>
+    <label>
+      <input type="radio" formControlName="isMale" value="true" /> זכר
+    </label>
+    <label>
+      <input type="radio" formControlName="isMale" value="false" /> נקבה
+    </label>
+  </div>
+  <div>
+    <label for="startDate">תאריך תחילת עבודה:</label>
+    <input type="date" id="startDate" formControlName="startDate" />
+  </div>
+  <div>
+    <label for="bornDate">תאריך לידה:</label>
+    <input type="date" id="bornDate" formControlName="bornDate" />
+  </div>
+  <!-- <div formArrayName="roles">
+    <div *ngFor="let role of this.rolesFormArray.controls; let i = index">
+      <div>[formGroupName]="i"</div>
+      <label>פרטי עבודה {{ i + 1 }}</label>
+      <div>
+        <label for="typeOfRole">סוג העבודה:</label>
+        <select id="typeOfRole" formControlName="typeOfRoleId">
+          <option
+            *ngFor="let typeOfRole of typeOfRoles"
+            [value]="typeOfRole.id"
+          >
+            {{ typeOfRole.name }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label>האם ניהולי:</label>
+        <label>
+          <input type="radio" formControlName="isManagement" value="true" />
+          כן
+        </label>
+        <label>
+          <input type="radio" formControlName="isManagement" value="false" />
+          לא
+        </label>
+      </div>
+      <div>
+        <label for="DateOfEntryIntoWork">תאריך כניסה לעבודה:</label>
+        <input
+          type="date"
+          id="DateOfEntryIntoWork"
+          formControlName="DateOfEntryIntoWork"
+        />
+      </div>
+      <button type="button" (click)="removeRole(i)">מחק עבודה זו</button>
+    </div> -->
+  <div formArrayName="roles">
+    <div *ngFor="let role of rolesFormArray.controls; let i = index">
+      <div [formGroupName]="i">
+        <label>פרטי עבודה {{ i + 1 }}</label>
+        <div>
+          <label for="typeOfRole">סוג העבודה:</label>
+          <select id="typeOfRole" formControlName="typeOfRoleId">
+            <option
+              *ngFor="let typeOfRole of typeOfRoles"
+              [value]="typeOfRole.id"
+            >
+              {{ typeOfRole.name }}
+            </option>
+          </select>
+        </div>
+        <div>
+          <label>האם ניהולי:</label>
+          <label>
+            <input type="radio" formControlName="isManagement" value="true" />
+            כן
+          </label>
+          <label>
+            <input type="radio" formControlName="isManagement" value="false" />
+            לא
+          </label>
+        </div>
+        <div>
+          <label for="DateOfEntryIntoWork">תאריך כניסה לעבודה:</label>
+          <input
+            type="date"
+            id="DateOfEntryIntoWork"
+            formControlName="DateOfEntryIntoWork"
+          />
+        </div>
+        <button type="button" (click)="removeRole(i)">מחק עבודה זו</button>
+      </div>
+    </div>
+
+    <button type="button" (click)="addRole()">הוסף עבודה חדשה</button>
+    <button type="submit">שלח</button>
+  </div>
+  <!-- *ngFor="let role of this.rolesFormArray.controls; let i = index" -->
+  <!-- *ngFor="let role of addEmployeeForm.get('roles')?.controls; let i = index" -->
+</form>

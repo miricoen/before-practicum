@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ליישר את הטופס לצד ימין של העמוד */
+form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  // align-items: flex-start;
+  direction: rtl;
+}
+.mat-form-field {
+  margin-bottom: 100px;
+  width: 100%; /* אימות הרישום על הרוחב המלא של העמוד */
+}
+
+button{
+  margin-bottom: 20px;
+
+}
