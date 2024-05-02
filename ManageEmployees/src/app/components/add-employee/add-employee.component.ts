@@ -16,12 +16,25 @@ import { RoleForEmployee } from '../../models/roleForEmployee.model';
 import { TypeOfRole } from '../../models/typeOfRole.model';
 import { TypeOfRolesService } from '../../services/type-of-roles.service';
 import { Employee } from '../../models/employee.model';
-import { EmployeeToPOst } from '../../models/employeeToPost.model';
-
+import { EmployeeToPost } from '../../models/employeeToPost.model';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-add-employee',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, ReactiveFormsModule],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatButtonModule,
+  ],
   templateUrl: './add-employee.component.html',
   styleUrl: './add-employee.component.scss',
 })
@@ -33,11 +46,13 @@ export class AddEmployeeComponent implements OnInit {
   rolesArray: RoleForEmployee[] = [];
   typeOfRoles: TypeOfRole[] = [];
   // rolesFormArray!: FormArray;
-  employeeFinal: EmployeeToPOst = new EmployeeToPOst();
+  employeeFinal: EmployeeToPost = new EmployeeToPost();
 
   constructor(
     private _formBuilder: FormBuilder,
-    public _typeOfRolesService: TypeOfRolesService
+    public _typeOfRolesService: TypeOfRolesService,
+    private _router: Router
+
   ) {}
 
   ngOnInit(): void {
@@ -87,6 +102,35 @@ export class AddEmployeeComponent implements OnInit {
   removeRole(index: number) {
     this.rolesFormArray = this.addEmployeeForm.get('roles') as FormArray;
     this.rolesFormArray.removeAt(index);
+  }
+
+  filterBornDate = (d: Date | null): boolean => {
+    const seventyYearsAgo = new Date();
+    seventyYearsAgo.setFullYear(seventyYearsAgo.getFullYear() - 70);
+
+    return !!(d && d.getTime() > seventyYearsAgo.getTime());
+  };
+
+  filterStartDate = (d: Date | null): boolean => {
+    const minWorkStartDate = new Date(
+      this.addEmployeeForm.get('bornDate')!.value!
+    );
+    minWorkStartDate.setFullYear(minWorkStartDate.getFullYear() + 18);
+
+    return !d || d >= minWorkStartDate;
+  };
+
+  filterDateOfEntry = (d: Date | null): boolean => {
+    const minWorkStartDate = new Date(
+      this.addEmployeeForm.get('startDate')!.value!
+    );
+    minWorkStartDate.setFullYear(minWorkStartDate.getFullYear());
+
+    return !d || d >= minWorkStartDate;
+  };
+
+  cancle() {
+    this._router.navigate(['/employeesTable']);
   }
 
   onSubmit(): void {

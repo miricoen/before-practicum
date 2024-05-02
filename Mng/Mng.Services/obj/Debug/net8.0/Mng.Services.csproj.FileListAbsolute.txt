@@ -29,3 +29,19 @@ D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\re
 D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.pdb
 D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\ref\Mng.Services.dll
 D:\שולחן העבודה\פרקטיקום\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.sourcelink.json
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.deps.json
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.dll
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\bin\Debug\net8.0\Mng.Services.pdb
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\bin\Debug\net8.0\Mng.Core.dll
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\bin\Debug\net8.0\Mng.Core.pdb
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.AssemblyReference.cache
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.AssemblyInfoInputs.cache
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.AssemblyInfo.cs
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.csproj.CoreCompileInputs.cache
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.sourcelink.json
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Serv.4FB1D599.Up2Date
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.dll
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\refint\Mng.Services.dll
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\Mng.Services.pdb
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Services\obj\Debug\net8.0\ref\Mng.Services.dll

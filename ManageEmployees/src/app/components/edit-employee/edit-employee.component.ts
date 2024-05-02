@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { EmployeeToPost } from '../../models/employeeToPost.model';
 
 @Component({
   selector: 'app-edit-employee',
@@ -31,6 +32,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatRadioModule,
     MatButtonModule,
+    
   ],
   templateUrl: './edit-employee.component.html',
   styleUrl: './edit-employee.component.scss',
@@ -114,7 +116,7 @@ export class EditEmployeeComponent implements OnInit {
           typesOfRolesId: new FormControl(role.typesOfRolesId, [
             Validators.required,
           ]),
-          isManagment: new FormControl(role.isManagment, [Validators.required]),
+          isManagment: new FormControl(role.isManagement, [Validators.required]),
           dateOfEntryIntoWork: new FormControl(role.dateOfEntryIntoWork, [
             Validators.required,
           ]),
@@ -166,6 +168,7 @@ export class EditEmployeeComponent implements OnInit {
 
   cancle() {
     this._router.navigate(['/employeesTable']);
+
   }
 
   onSubmit() {

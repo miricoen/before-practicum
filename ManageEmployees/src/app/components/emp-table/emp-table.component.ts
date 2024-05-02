@@ -5,11 +5,12 @@ import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-emp-table',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule],
+  imports: [CommonModule, MatFormFieldModule,MatTableModule],
 
   templateUrl: './emp-table.component.html',
   styleUrl: './emp-table.component.scss',
@@ -18,11 +19,12 @@ export class EmpTableComponent implements OnInit {
   dataSource = new MatTableDataSource<Employee>();
   private employeesSubscription!: Subscription;
   displayedColumns: string[] = [
-    'שם פרטי',
-    'שם משפחה',
-    'ת.ז.',
-    'תאריך תחילת עבודה',
+    'firstName',
+    'lastName',
+    'tz',
+    'startDate'
   ];
+
 
   constructor(public _employeeService: EmployeeService) {}
   ngOnInit(): void {

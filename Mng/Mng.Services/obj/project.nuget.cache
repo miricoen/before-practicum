@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "iqPQI8d7Ze9HnH5VG8Jsq+EITIehq3qKt4Wx3cvRD0fAgyNDe6jS43vu7KBEu8j+mClGjcSJGkZ/ixq0bWZj4w==",
+  "dgSpecHash": "7nRUL//d7V7bxLaA9SLCXTv7eTZdd5zkscYe1DIs8TetG7kfVDvZ8ScumyDiRhk0h/couZ4K9h9wNAsM/VksiQ==",
   "success": true,
-  "projectFilePath": "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.Services\\Mng.Services.csproj",
+  "projectFilePath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Services\\Mng.Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\miri\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
-    "C:\\Users\\miri\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\miri\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
-    "C:\\Users\\miri\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\miri\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\מירי\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\מירי\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\מירי\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\מירי\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\מירי\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

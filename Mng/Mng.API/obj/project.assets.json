@@ -4395,23 +4395,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\miri\\.nuget\\packages\\": {},
+    "C:\\Users\\מירי\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.API\\Mng.API.csproj",
+      "projectUniqueName": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.API\\Mng.API.csproj",
       "projectName": "Mng.API",
-      "projectPath": "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.API\\Mng.API.csproj",
-      "packagesPath": "C:\\Users\\miri\\.nuget\\packages\\",
-      "outputPath": "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.API\\obj\\",
+      "projectPath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.API\\Mng.API.csproj",
+      "packagesPath": "C:\\Users\\מירי\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\miri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\מירי\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4426,11 +4426,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.Data\\Mng.Data.csproj": {
-              "projectPath": "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.Data\\Mng.Data.csproj"
+            "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Data\\Mng.Data.csproj": {
+              "projectPath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Data\\Mng.Data.csproj"
             },
-            "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.Services\\Mng.Services.csproj": {
-              "projectPath": "D:\\שולחן העבודה\\פרקטיקום\\Mng\\Mng.Services\\Mng.Services.csproj"
+            "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Services\\Mng.Services.csproj": {
+              "projectPath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Services\\Mng.Services.csproj"
             }
           }
         }
@@ -4439,6 +4439,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4479,7 +4484,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

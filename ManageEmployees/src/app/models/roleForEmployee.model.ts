@@ -2,8 +2,8 @@ import { TypeOfRole } from './typeOfRole.model';
 
 export class RoleForEmployee {
   // id!: number;
-  typeOfRoleId!: number;
+  typesOfRolesId!: number;
   isManagement!: boolean;
-  DateOfEntryIntoWork!: Date;
+  dateOfEntryIntoWork!: Date;
   // EmployeeId!: number;
 }

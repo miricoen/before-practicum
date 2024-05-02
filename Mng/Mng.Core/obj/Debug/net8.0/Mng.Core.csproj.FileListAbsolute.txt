@@ -23,3 +23,16 @@ D:\שולחן העבודה\פרקטיקום\Mng\Mng.Core\obj\Debug\net8.0\refint
 D:\שולחן העבודה\פרקטיקום\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.pdb
 D:\שולחן העבודה\פרקטיקום\Mng\Mng.Core\obj\Debug\net8.0\ref\Mng.Core.dll
 D:\שולחן העבודה\פרקטיקום\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.sourcelink.json
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\bin\Debug\net8.0\Mng.Core.deps.json
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\bin\Debug\net8.0\Mng.Core.dll
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\bin\Debug\net8.0\Mng.Core.pdb
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.csproj.AssemblyReference.cache
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.AssemblyInfoInputs.cache
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.AssemblyInfo.cs
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.csproj.CoreCompileInputs.cache
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.sourcelink.json
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.dll
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\refint\Mng.Core.dll
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\Mng.Core.pdb
+C:\Users\מירי\Desktop\before-practicum\Mng\Mng.Core\obj\Debug\net8.0\ref\Mng.Core.dll

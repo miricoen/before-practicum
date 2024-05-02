@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Mng.Core.DTO;
 using Mng.Core.Entities;
@@ -38,7 +38,7 @@ namespace Mng.API.Controllers
             Employee emp = await _employeeService.GetById(id);
             if (emp == null)
             {
-                return NotFound("Employee not found");
+                return NotFound();
             }
             EmployeeOutputDTO empDTO = _mapper.Map<EmployeeOutputDTO>(emp);
             return empDTO;
@@ -51,7 +51,7 @@ namespace Mng.API.Controllers
             Employee empToAdd = _mapper.Map<Employee>(emp);
             await _employeeService.Add(empToAdd);
 
-            return Ok("Employee added successfully");
+            return Ok();
         }
 
         // PUT api/<EmployeesController>/5
@@ -61,17 +61,17 @@ namespace Mng.API.Controllers
             var existingEmployee = await _employeeService.GetById(id);
             if (existingEmployee == null)
             {
-                return NotFound("Employee not found");
+                return NotFound();
             }
 
             _mapper.Map(employeeDTO, existingEmployee);
 
             var updated = await _employeeService.Update(existingEmployee);
-            if (!updated)
-            {
-                return StatusCode(500, "Failed to update employee");
-            }
-            return Ok("Employee updated successfully");
+            //if (updated )
+            //{
+            //    return StatusCode(500, "Failed to update employee");
+            //}
+            return Ok();
         }
 
         // DELETE api/<EmployeesController>/5
@@ -81,9 +81,9 @@ namespace Mng.API.Controllers
             var deleted = await _employeeService.Delete(id);
             if (!deleted)
             {
-                return NotFound("Employee not found");
+                return NotFound();
             }
-            return Ok("Employee deleted successfully");
+            return Ok();
         }
     }
 }

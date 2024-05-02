@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, Subject } from 'rxjs';
 import { Employee } from '../models/employee.model';
+import { EmployeeToPost } from '../models/employeeToPost.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -40,8 +41,8 @@ export class EmployeeService {
   //   }
   // }
 
-  getEmpById(id: number) {
-    return this.employees.find((e) => e.id === id);
+  getEmpById(id: number): Observable<Employee> {
+    return this.http.get<Employee>(`${this.apiUrl}/${id}`);
   }
 
   delete(id: number) {
@@ -57,5 +58,21 @@ export class EmployeeService {
         console.error('Error deleting employee:', error);
       }
     );
+  }
+
+  // editEmployee(id: number, emp: Employee) {
+  //   var empToPost: EmployeeToPost = {...emp};
+  //   return this.http.put<boolean>(`${this.apiUrl}/${id}`, empToPost).subscribe(
+  //     () => {
+  //       console.log('Employee added successfully');
+  //     },
+  //     (error) => {
+  //       console.error('Error adding employee:', error);
+  //     }
+  //   );
+  // }
+  editEmployee(id: number, emp: Employee): Observable<boolean> {
+    var empToPost: EmployeeToPost = { ...emp };
+    return this.http.put<boolean>(`${this.apiUrl}/${id}`, empToPost);
   }
 }

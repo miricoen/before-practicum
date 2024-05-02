@@ -12,8 +12,8 @@ using Mng.Data;
 namespace Mng.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240321105508_connection one to many 3")]
-    partial class connectiononetomany3
+    [Migration("20240430153837_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,6 +53,10 @@ namespace Mng.Data.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Tz")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
@@ -69,20 +73,20 @@ namespace Mng.Data.Migrations
                     b.Property<DateTime>("DateOfEntryIntoWork")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("EmployeeId")
+                    b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsManagment")
                         .HasColumnType("bit");
 
-                    b.Property<int>("RoleId")
+                    b.Property<int>("TypesOfRolesId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("EmployeeId");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("TypesOfRolesId");
 
                     b.ToTable("Roles");
                 });
@@ -106,15 +110,19 @@ namespace Mng.Data.Migrations
 
             modelBuilder.Entity("Mng.Core.Entities.RoleForEmployee", b =>
                 {
-                    b.HasOne("Mng.Core.Entities.Employee", null)
+                    b.HasOne("Mng.Core.Entities.Employee", "Employee")
                         .WithMany("Roles")
-                        .HasForeignKey("EmployeeId");
-
-                    b.HasOne("Mng.Core.Entities.TypesOfRoles", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Mng.Core.Entities.TypesOfRoles", "Role")
+                        .WithMany("Employees")
+                        .HasForeignKey("TypesOfRolesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
 
                     b.Navigation("Role");
                 });
@@ -122,6 +130,11 @@ namespace Mng.Data.Migrations
             modelBuilder.Entity("Mng.Core.Entities.Employee", b =>
                 {
                     b.Navigation("Roles");
+                });
+
+            modelBuilder.Entity("Mng.Core.Entities.TypesOfRoles", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }
