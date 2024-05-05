@@ -32,7 +32,6 @@ import { EmployeeToPost } from '../../models/employeeToPost.model';
     MatSelectModule,
     MatRadioModule,
     MatButtonModule,
-    
   ],
   templateUrl: './edit-employee.component.html',
   styleUrl: './edit-employee.component.scss',
@@ -116,7 +115,9 @@ export class EditEmployeeComponent implements OnInit {
           typesOfRolesId: new FormControl(role.typesOfRolesId, [
             Validators.required,
           ]),
-          isManagment: new FormControl(role.isManagement, [Validators.required]),
+          isManagement: new FormControl(role.isManagement, [
+            Validators.required,
+          ]),
           dateOfEntryIntoWork: new FormControl(role.dateOfEntryIntoWork, [
             Validators.required,
           ]),
@@ -130,7 +131,7 @@ export class EditEmployeeComponent implements OnInit {
     this.rolesFormArray.push(
       this._formBuilder.group({
         typesOfRolesId: new FormControl(0, [Validators.required]),
-        isManagment: new FormControl(true),
+        isManagement: new FormControl(true),
         dateOfEntryIntoWork: new FormControl(new Date()),
       })
     );
@@ -168,7 +169,6 @@ export class EditEmployeeComponent implements OnInit {
 
   cancle() {
     this._router.navigate(['/employeesTable']);
-
   }
 
   onSubmit() {
@@ -190,11 +190,11 @@ export class EditEmployeeComponent implements OnInit {
     const transformedData = this.rolesFormArray.value.map(
       (item: {
         typesOfRolesId: number;
-        isManagment: boolean;
+        isManagement: boolean;
         dateOfEntryIntoWork: Date;
       }) => ({
         typesOfRolesId: item.typesOfRolesId,
-        isManagment: item.isManagment === true,
+        isManagement: item.isManagement === true,
         dateOfEntryIntoWork: item.dateOfEntryIntoWork,
       })
     );

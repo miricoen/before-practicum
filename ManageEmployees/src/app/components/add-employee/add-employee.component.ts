@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { EmployeeService } from '../../services/employee.service';
 @Component({
   selector: 'app-add-employee',
   standalone: true,
@@ -51,8 +52,8 @@ export class AddEmployeeComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     public _typeOfRolesService: TypeOfRolesService,
-    private _router: Router
-
+    private _router: Router,
+    private _employeeService: EmployeeService
   ) {}
 
   ngOnInit(): void {
@@ -73,6 +74,11 @@ export class AddEmployeeComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
     ]),
+    tz: new FormControl('123456789', [
+      Validators.required,
+      Validators.minLength(9),
+      Validators.maxLength(9),
+    ]),
     isMale: new FormControl('true'), // ברירת מחדל - זכר
     startDate: new FormControl(new Date()), // תאריך התחלת עבודה
     bornDate: new FormControl(new Date()), // תאריך לידה
@@ -80,7 +86,7 @@ export class AddEmployeeComponent implements OnInit {
     roles: this._formBuilder.array([
       this._formBuilder.group({
         typeOfRoleId: new FormControl('', Validators.required),
-        isManegemene: new FormControl('true'),
+        isManegement: new FormControl('true'),
         DateOfEntryIntoWork: new FormControl(new Date()),
       }),
     ]),
@@ -134,16 +140,35 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // this.employeeFinal.firstName = this.addEmployeeForm.get('firstName')!.value;
-    // this.employeeFinal.lastName = this.addEmployeeForm.get('lastName')!.value;
-    // this.employeeFinal.startDate = this.addEmployeeForm.get('startDate')!.value;
-    // this.employeeFinal.bornDate = this.addEmployeeForm.get('bornDate')!.value;
-    // this.employeeFinal.roles = this.addEmployeeForm.get('roles')!.value;
-    // console.log(this.employeeFinal);
-    console.log(
-      'addEmployeeForm.value',
-      this.addEmployeeForm.get('roles')!.value
-    );
-    // this.addEmployeeForm.at(itemIndex) as FormGroup).get('subItems') as FormArray;
+    //Group the content of form into an object of type employeeToPost
+    this.employeeFinal.firstName =
+      this.addEmployeeForm.get('firstName')!.value ?? '';
+    this.employeeFinal.lastName =
+      this.addEmployeeForm.get('lastName')!.value ?? '';
+    this.employeeFinal.tz = this.addEmployeeForm.get('tz')!.value ?? '';
+    this.employeeFinal.startDate =
+      this.addEmployeeForm.get('startDate')!.value || new Date();
+    this.employeeFinal.bornDate =
+      this.addEmployeeForm.get('bornDate')!.value || new Date();
+    this.employeeFinal.isMale =
+      this.addEmployeeForm.get('isMale')!.value === 'true';
+    this.employeeFinal.roles = this.addEmployeeForm
+      .get('roles')!
+      .value.map((role: any) => {
+        return {
+          typesOfRolesId: role.typeOfRoleId,
+          isManagement: role.isManegement,
+          dateOfEntryIntoWork: role.DateOfEntryIntoWork,
+        };
+      });
+    this.employeeFinal.status = true;
+    console.log(this.employeeFinal);
+    this._employeeService.addEmployee(this.employeeFinal).subscribe((res) => {
+      Swal.fire({
+        title: 'העובד נוסף בהצלחה',
+        icon: 'success',
+      });
+      this._router.navigate(['/employeesTable']);
+    });
   }
 }

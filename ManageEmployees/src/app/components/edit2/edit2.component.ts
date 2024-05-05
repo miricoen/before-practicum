@@ -36,27 +36,29 @@ export class EditEmployeeComponent implements OnInit {
     this._route.params.subscribe(async (param) => {
       const fetchedEmpId = param['id'];
       console.log(fetchedEmpId);
-      this._employeeService.getEmpById(fetchedEmpId).subscribe((emp: Employee) => {
-        if (emp) {
-          this.currentEmployee = emp;
-          console.log(this.currentEmployee);
-    
-          // כאן ייצר את הטופס רק כאשר הנתונים זמינים
-          this.editEmployeeForm = this._formBuilder.group({
-            firstName: new FormControl(this.currentEmployee.firstName, [
-              Validators.required,
-              Validators.minLength(3),
-            ]),
-          });
-        }
-      });
-    
+      this._employeeService
+        .getEmpById(fetchedEmpId)
+        .subscribe((emp: Employee) => {
+          if (emp) {
+            this.currentEmployee = emp;
+            console.log(this.currentEmployee);
+
+            // כאן ייצר את הטופס רק כאשר הנתונים זמינים
+            this.editEmployeeForm = this._formBuilder.group({
+              firstName: new FormControl(this.currentEmployee.firstName, [
+                Validators.required,
+                Validators.minLength(3),
+              ]),
+            });
+          }
+        });
+
       this._typeOfRolesService.getRoles().subscribe((roles: TypeOfRole[]) => {
         this.typeOfRoles = roles;
         console.log('cpmponent', this.typeOfRoles);
       });
     });
-    
+
     // this.editEmployeeForm = this._formBuilder.group({
     //   firstName: new FormControl(this.currentEmployee.firstName, [
     //     Validators.required,
@@ -75,14 +77,13 @@ export class EditEmployeeComponent implements OnInit {
     //         Validators.required,
     //         Validators.pattern(/^-?\d*\.?\d*$/),
     //       ]),
-    //       isManagment: new FormControl(true),
+    //       isManagement: new FormControl(true),
     //       dateOfEntryIntoWork: new FormControl(new Date()),
     //     }),
     //   ]),
     // });
     // this. rolesFormArray = this.editEmployeeForm.get('roles') as FormArray;
     // this.fname = this.currentEmployee.firstName;
-
   }
 
   ngOnInit(): void {
@@ -103,7 +104,6 @@ export class EditEmployeeComponent implements OnInit {
     //   this.typeOfRoles = roles;
     //   console.log('cpmponent', this.typeOfRoles);
     // });
-
     // console.log('this.currentEmployee', this.currentEmployee);
     // this.editEmployeeForm = this._formBuilder.group({
     //   firstName: new FormControl(this.fname, [
@@ -117,7 +117,7 @@ export class EditEmployeeComponent implements OnInit {
     this.currentEmployee.roles.forEach((role) => {
       this.addRoleWithParams(
         role.typesOfRolesId!,
-        role.isManagment!,
+        role.isManagement!,
         role.dateOfEntryIntoWork!
       );
     });
@@ -135,7 +135,7 @@ export class EditEmployeeComponent implements OnInit {
           Validators.required,
           Validators.pattern(/^-?\d*\.?\d*$/),
         ]),
-        isManagment: new FormControl(true),
+        isManagement: new FormControl(true),
         dateOfEntryIntoWork: new FormControl(new Date()),
       })
     );
@@ -161,7 +161,7 @@ export class EditEmployeeComponent implements OnInit {
     // const transformedData = this.currentEmployee.roles.map((item) => ({
     //   typesOfRolesId:
     //     item.typesOfRolesId != null ? Number(item.typesOfRolesId) : 0,
-    //   isManagment: item.isManagment === true,
+    //   isManagement: item.isManagement === true,
     //   dateOfEntryIntoWork:
     //     item.dateOfEntryIntoWork !== null
     //       ? new Date(item.dateOfEntryIntoWork)

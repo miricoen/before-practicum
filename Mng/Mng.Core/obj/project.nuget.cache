@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EdIoA/fl3o1oXZrVgn8Q2MUQtDtcAQvE00lX2+DNXEOhJJ8FCMyiCy4IHvafFSl6FvrNvBJG94tM/9gha+MW/w==",
+  "dgSpecHash": "lTkdQoMsIUNsCIk7zLHM1fWzmbXHSjPldn11TatRRrd6+Q518kPv82aFsO+7xtWq9+zVQQikvt0/nQ9cCZoVcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj",
+  "projectFilePath": "C:\\Users\\מירי\\OneDrive\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\מירי\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\מירי\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

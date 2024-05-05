@@ -68,7 +68,7 @@
     <button type="submit">שלח</button>
   </div>
   </form> -->
-  <form
+<form
   [formGroup]="addEmployeeForm"
   (ngSubmit)="onSubmit()"
   *ngIf="addEmployeeForm"
@@ -133,12 +133,13 @@
   </div>
   <div formArrayName="roles">
     <div *ngFor="let role of rolesFormArray.controls; let i = index">
+      <div [formGroupName]="i"></div>
       <div [formGroupName]="i">
         <label>פרטי עבודה {{ i + 1 }}</label>
         <div>
           <mat-form-field>
             <mat-label>סוג העבודה:</mat-label>
-            <mat-select formControlName="typesOfRolesId">
+            <mat-select formControlName="typeOfRoleId">
               <mat-option
                 *ngFor="let typeOfRole of typeOfRoles"
                 [value]="typeOfRole.id"
@@ -147,12 +148,13 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+
           <div>
             <label>האם תפקיד זה ניהולי</label>
             <mat-radio-group
-              aria-label="isManagment"
+              aria-label="isManegement"
               ngDefaultControl
-              formControlName="isManagment"
+              formControlName="isManegement"
             >
               <mat-radio-button value="true">ניהולי</mat-radio-button>
               <mat-radio-button value="false">לא ניהולי</mat-radio-button>
@@ -164,15 +166,15 @@
             <input
               matInput
               [matDatepickerFilter]="filterDateOfEntry"
-              [matDatepicker]="dateOfEntryIntoWork"
-              formControlName="dateOfEntryIntoWork"
+              [matDatepicker]="DateOfEntryIntoWork"
+              formControlName="DateOfEntryIntoWork"
             />
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle
               matIconSuffix
-              [for]="dateOfEntryIntoWork"
+              [for]="DateOfEntryIntoWork"
             ></mat-datepicker-toggle>
-            <mat-datepicker #dateOfEntryIntoWork></mat-datepicker>
+            <mat-datepicker #DateOfEntryIntoWork></mat-datepicker>
           </mat-form-field>
         </div>
         <button
@@ -185,16 +187,16 @@
         </button>
       </div>
     </div>
-<div>
-    <button
-      mat-stroked-button
-      color="primary"
-      type="button"
-      (click)="addRole()"
-    >
-      הוסף עבודה חדשה
-    </button>
-  </div>
+    <div>
+      <button
+        mat-stroked-button
+        color="primary"
+        type="button"
+        (click)="addRole()"
+      >
+        הוסף עבודה חדשה
+      </button>
+    </div>
     <div>
       <button
         mat-stroked-button

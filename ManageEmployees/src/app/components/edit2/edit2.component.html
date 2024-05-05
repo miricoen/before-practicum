@@ -45,11 +45,11 @@
           <div>
             <label>האם ניהולי:</label>
             <label>
-              <input type="radio" formControlName="isManagment" value="true" />
+              <input type="radio" formControlName="isManagement" value="true" />
               כן
             </label>
             <label>
-              <input type="radio" formControlName="isManagment" value="false" />
+              <input type="radio" formControlName="isManagement" value="false" />
               לא
             </label>
           </div>
@@ -66,11 +66,9 @@
 <!-- <button type="submit">עדכן</button>
   </form>
    -->
-   <form [formGroup]="editEmployeeForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="firstName">שם פרטי</label>
-      <input formControlName="firstName" />
-    </div>
-  </form>
-  
-
+<form [formGroup]="editEmployeeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="firstName">שם פרטי</label>
+    <input formControlName="firstName" />
+  </div>
+</form>

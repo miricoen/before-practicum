@@ -75,4 +75,15 @@ export class EmployeeService {
     var empToPost: EmployeeToPost = { ...emp };
     return this.http.put<boolean>(`${this.apiUrl}/${id}`, empToPost);
   }
+
+ addEmployee(emp: EmployeeToPost): Observable<boolean> {
+  console.log(emp);
+    return this.http.post<boolean>(this.apiUrl, emp);
+  }
+
+
+
+
+
+
 }

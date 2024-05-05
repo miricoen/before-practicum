@@ -6,12 +6,15 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
+import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-emp-table',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule,MatTableModule],
-
+  imports: [CommonModule, MatFormFieldModule, MatTableModule, MatInputModule, MatButtonModule, MatIconModule  ],
   templateUrl: './emp-table.component.html',
   styleUrl: './emp-table.component.scss',
 })
@@ -22,17 +25,23 @@ export class EmpTableComponent implements OnInit {
     'firstName',
     'lastName',
     'tz',
-    'startDate'
+    'startDate',
+    'delete', // כפתור מחיקה
+    'edit', // כפתור עריכה
   ];
 
-
-  constructor(public _employeeService: EmployeeService) {}
-  ngOnInit(): void {
+  constructor(
+    public _employeeService: EmployeeService,
+    private _router: Router
+  ) {
     this.employeesSubscription = this._employeeService
       .getEmployeesSubject()
       .subscribe(
         (employees: Employee[]) => {
-          this.dataSource.data = employees; // מעדכן את המערך כאשר הנתונים מוכנים
+          // this.dataSource.data = employees; // מעדכן את המערך כאשר הנתונים מוכנים
+          this.dataSource.data = employees.filter(
+            (employee) => employee.status === true
+          );
           console.log(this.dataSource); // מדפיס את המערך רק כאשר הוא מעודכן עם הנתונים החדשים
         },
         (error) => {
@@ -40,29 +49,30 @@ export class EmpTableComponent implements OnInit {
         }
       );
   }
-
-  ngOnDestroy(): void {
-    this.employeesSubscription.unsubscribe(); // בסיום הקומפוננטה, בטל את ההרשמה ל-Subject
-  }
-
+  ngOnInit(): void {}
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-
-  delete(id: number) {
-    console.log('delete in TS');
+  deleteEmployee(id: number) {
     this._employeeService.delete(id);
   }
+
+  addEmployee() {
+    this._router.navigate(['/addEmployee']);
+  }
+
+  editEmployee(id: number) {
+    this._router.navigate([`${id}/editEmployee`]);
+  }
+
+
+  exportToExcel() {
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.dataSource.data);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    /* save to file */
+    XLSX.writeFile(wb, 'EmployeeData.xlsx');
+  }
 }
-
-// export class TableFilteringExample {
-//   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-//   dataSource = new MatTableDataSource(ELEMENT_DATA);
-
-//   applyFilter(event: Event) {
-//     const filterValue = (event.target as HTMLInputElement).value;
-//     this.dataSource.filter = filterValue.trim().toLowerCase();
-//   }
-// }

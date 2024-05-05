@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj": {}
+    "C:\\Users\\מירי\\OneDrive\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj": {
+    "C:\\Users\\מירי\\OneDrive\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj",
+        "projectUniqueName": "C:\\Users\\מירי\\OneDrive\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj",
         "projectName": "Mng.Core",
-        "projectPath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj",
+        "projectPath": "C:\\Users\\מירי\\OneDrive\\Desktop\\before-practicum\\Mng\\Mng.Core\\Mng.Core.csproj",
         "packagesPath": "C:\\Users\\מירי\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\מירי\\Desktop\\before-practicum\\Mng\\Mng.Core\\obj\\",
+        "outputPath": "C:\\Users\\מירי\\OneDrive\\Desktop\\before-practicum\\Mng\\Mng.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
