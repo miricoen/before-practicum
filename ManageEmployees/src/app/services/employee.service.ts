@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable, Subject } from 'rxjs';
 import { Employee } from '../models/employee.model';
 import { EmployeeToPost } from '../models/employeeToPost.model';
+import * as XLSX from 'xlsx';
 @Injectable({
   providedIn: 'root',
 })
@@ -32,14 +33,6 @@ export class EmployeeService {
     return this.employeesSubject.asObservable(); // החזר את ה-subject כ- Observable
   }
 
-  // delete(id: number) {
-  //   var emp = this.getEmpById(id);
-  //   if (emp) {
-  //     emp.status = false;
-  //   } else {
-  //     console.error('Employee not found with ID:', id);
-  //   }
-  // }
 
   getEmpById(id: number): Observable<Employee> {
     return this.http.get<Employee>(`${this.apiUrl}/${id}`);
@@ -74,6 +67,14 @@ export class EmployeeService {
   editEmployee(id: number, emp: Employee): Observable<boolean> {
     var empToPost: EmployeeToPost = { ...emp };
     return this.http.put<boolean>(`${this.apiUrl}/${id}`, empToPost);
+  }
+
+  exportToExcel() {
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.employees);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    /* save to file */
+    XLSX.writeFile(wb, 'EmployeeData.xlsx');
   }
 
  addEmployee(emp: EmployeeToPost): Observable<boolean> {

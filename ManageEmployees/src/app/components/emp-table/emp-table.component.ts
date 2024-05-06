@@ -10,11 +10,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-emp-table',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatTableModule, MatInputModule, MatButtonModule, MatIconModule  ],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
   templateUrl: './emp-table.component.html',
   styleUrl: './emp-table.component.scss',
 })
@@ -66,13 +72,9 @@ export class EmpTableComponent implements OnInit {
   editEmployee(id: number) {
     this._router.navigate([`${id}/editEmployee`]);
   }
-
-
   exportToExcel() {
-    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.dataSource.data);
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-    /* save to file */
-    XLSX.writeFile(wb, 'EmployeeData.xlsx');
+    this._employeeService.exportToExcel();
   }
+
+
 }
