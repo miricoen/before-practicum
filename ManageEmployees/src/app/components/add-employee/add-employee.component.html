@@ -1,73 +1,5 @@
-<!-- 
-<form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="firstName">שם פרטי:</label>
-    <input type="text" id="firstName" formControlName="firstName" />
-  </div>
-  <div>
-    <label for="lastName">שם משפחה:</label>
-    <input type="text" id="lastName" formControlName="lastName" />
-  </div>
-  <div>
-    <label>מגדר:</label>
-    <label>
-      <input type="radio" formControlName="isMale" value="true" /> זכר
-    </label>
-    <label>
-      <input type="radio" formControlName="isMale" value="false" /> נקבה
-    </label>
-  </div>
-  <div>
-    <label for="startDate">תאריך תחילת עבודה:</label>
-    <input type="date" id="startDate" formControlName="startDate" />
-  </div>
-  <div>
-    <label for="bornDate">תאריך לידה:</label>
-    <input type="date" id="bornDate" formControlName="bornDate" />
-  </div>
+<h1>הוספת עובד חדש למערך</h1>
 
-  <div formArrayName="roles">
-    <div *ngFor="let role of rolesFormArray.controls; let i = index">
-      <div [formGroupName]="i">
-        <label>פרטי עבודה {{ i + 1 }}</label>
-        <div>
-          <label for="typeOfRole">סוג העבודה:</label>
-          <select id="typeOfRole" formControlName="typeOfRoleId">
-            <option
-              *ngFor="let typeOfRole of typeOfRoles"
-              [value]="typeOfRole.id"
-            >
-              {{ typeOfRole.name }}
-            </option>
-          </select>
-        </div>
-        <div>
-          <label>האם ניהולי:</label>
-          <label>
-            <input type="radio" formControlName="isManagement" value="true" />
-            כן
-          </label>
-          <label>
-            <input type="radio" formControlName="isManagement" value="false" />
-            לא
-          </label>
-        </div>
-        <div>
-          <label for="DateOfEntryIntoWork">תאריך כניסה לעבודה:</label>
-          <input
-            type="date"
-            id="DateOfEntryIntoWork"
-            formControlName="DateOfEntryIntoWork"
-          />
-        </div>
-        <button type="button" (click)="removeRole(i)">מחק עבודה זו</button>
-      </div>
-    </div>
-
-    <button type="button" (click)="addRole()">הוסף עבודה חדשה</button>
-    <button type="submit">שלח</button>
-  </div>
-  </form> -->
 <form
   [formGroup]="addEmployeeForm"
   (ngSubmit)="onSubmit()"
@@ -156,8 +88,8 @@
               ngDefaultControl
               formControlName="isManegement"
             >
-              <mat-radio-button value="true">ניהולי</mat-radio-button>
-              <mat-radio-button value="false">לא ניהולי</mat-radio-button>
+              <mat-radio-button color="accent" value="true" >ניהולי</mat-radio-button>
+              <mat-radio-button color="accent" value="false">לא ניהולי</mat-radio-button>
             </mat-radio-group>
           </div>
 
@@ -179,7 +111,6 @@
         </div>
         <button
           mat-stroked-button
-          color="primary"
           type="button"
           (click)="removeRole(i)"
         >
@@ -190,7 +121,6 @@
     <div>
       <button
         mat-stroked-button
-        color="primary"
         type="button"
         (click)="addRole()"
       >
@@ -200,13 +130,12 @@
     <div>
       <button
         mat-stroked-button
-        color="primary"
         type="button"
         (click)="cancle()"
       >
         אל תשמור
       </button>
-      <button mat-stroked-button color="primary" type="submit">סיים</button>
-    </div>
+      <button mat-stroked-button type="submit" >סיים</button>
+        </div>
   </div>
 </form>

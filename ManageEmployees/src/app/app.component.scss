@@ -7,15 +7,16 @@ app-toolbar {
   width: 5%;
   position: fixed;
   top: 0;
-//   left: 0;
   background-color: #e3f1e3;
   height: 100vh;
+
 }
 .routerOutletWrapper {
-  width: 80%;
+  // width: 90%;
   margin-left: auto;
   margin-right: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
